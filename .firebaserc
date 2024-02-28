@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "e-commerce-light": {
+      "hosting": {
+        "e-commerce-task": [
+          "e-commerce-light"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "e-commerce-light"
+  }
+}
