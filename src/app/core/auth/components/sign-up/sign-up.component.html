@@ -1,0 +1,78 @@
+<section class="flex h-screen w-screen items-center justify-center">
+  <div class="z-0 flex w-full items-center justify-center px-0 text-center md:px-16 lg:w-1/2">
+    <div class="z-20 w-full border-2 border-red-500 py-6">
+      <p class="text-2xl font-semibold">Sign Up to Hatoly</p>
+
+      <form
+        action=""
+        class="mx-auto w-full px-4 sm:w-2/3 lg:px-0"
+        [formGroup]="signUpForm"
+        (submit)="signUp()"
+      >
+        <div class="pb-2 pt-4">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            formControlName="email"
+            placeholder="Email"
+            autocomplete
+            #userEmail
+            class="mt-2 w-full rounded-sm border p-4 text-lg text-gray-900 focus:border-indigo-500 focus:bg-white focus:outline-none"
+          />
+
+          <div
+            *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+            class="bg-red-500 text-white"
+          >
+            <div *ngIf="email?.errors?.['required']">Name is required.</div>
+            <div *ngIf="email?.errors?.['email']">Not a valid email.</div>
+          </div>
+        </div>
+        <div class="pb-2 pt-4">
+          <input
+            type="password"
+            name="password"
+            id="password"
+            formControlName="password"
+            placeholder="Password"
+            minlength="8"
+            #userPassword
+            class="mt-2 w-full rounded-sm border p-4 text-lg text-gray-900 focus:border-indigo-500 focus:bg-white focus:outline-none"
+          />
+          <div
+            *ngIf="password?.invalid && (password?.dirty || password?.touched)"
+            class="bg-red-500 text-white"
+          >
+            <div *ngIf="password?.errors?.['required']">Password is required.</div>
+            <div *ngIf="password?.errors?.['minlength']">
+              Password must be at least 8 characters.
+            </div>
+          </div>
+        </div>
+        <div class="pb-2 pt-4">
+          <button
+            class="w-full bg-blue-500 p-4 text-lg uppercase text-white hover:bg-[#2C387E] focus:outline-none"
+            type="submit"
+          >
+            sign up
+          </button>
+        </div>
+
+        <div class="capitalized flex justify-center pt-2">
+          already have an account?
+          <a
+            routerLink="/sign-in"
+            class="active:text-blue-500 dark:text-blue-400 dark:hover:text-blue-500 dark:focus:text-blue-500 dark:active:text-blue-600"
+          >
+            <p
+              class="cursor-pointer pl-2 text-right text-gray-400 hover:text-indigo-500 hover:underline"
+            >
+              sign in
+            </p>
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

@@ -1,5 +1,5 @@
-import prettierConfig from './prettier.config.js';
-
+// import prettierConfig from './prettier.config.js';
+const pret = require('./prettier.config.js');
 module.exports = {
   'root': true,
   'ignorePatterns': ['.eslintrc.js', 'projects/**/*'],
@@ -59,6 +59,6 @@ module.exports = {
   },
   'plugins': ['@typescript-eslint', '@typescript-eslint/eslint-plugin'],
   'rules': {
-    'prettier/prettier': ['error', prettierConfig],
+    'prettier/prettier': ['error', pret],
   },
 };

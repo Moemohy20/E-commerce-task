@@ -1,0 +1,9 @@
+<div class="flex flex-row h-14 rounded-l-lg">
+  <div class="snack-icon-header bg-red-700 basis-1/6 flex items-center justify-center rounded-l-lg">
+    <mat-icon>error_outline</mat-icon>
+  </div>
+  <div class="snack-info-body w-full ml-2 p-2 text-white basis-auto flex items-center justify-between">
+    <span>{{ message }}</span>
+    <mat-icon class="cursor-pointer" (click)="onDismiss()">clear</mat-icon>
+  </div>
+</div>

@@ -1,0 +1,85 @@
+<section class="flex h-screen w-screen items-stretch">
+  <div
+    class="relative hidden w-1/2 items-center bg-gray-500 bg-cover bg-no-repeat text-white lg:flex"
+    style="
+      background-image: url(https://images.unsplash.com/photo-1554224154-26032ffc0d07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1426&q=80);
+    "
+  >
+    <div class="absolute inset-0 z-0 bg-black opacity-60"></div>
+    <div class="z-10 w-full px-24">
+      <p class="text-5xl font-bold">Award winning eFiling Platform</p>
+      <p class="text-lg">- Cut compliance time & cost by 75%</p>
+      <p class="text-lg">- Choose our modern API or web APP</p>
+      <p class="text-lg">- File all federal & state forms in a single Platform</p>
+      <p class="text-lg">- TIN match API & bulk TIN match</p>
+      <p class="text-lg">- Over 10 Integrations</p>
+    </div>
+  </div>
+
+  <div class="z-0 flex w-full items-center justify-center px-0 text-center md:px-16 lg:w-1/2">
+    <div class="z-20 w-full py-6">
+      <p class="text-4xl font-semibold">Sign-in to E-commerce</p>
+
+      <p class="text-gray-700">or use your email account</p>
+      <form
+        action=""
+        class="mx-auto w-full px-4 sm:w-2/3 lg:px-0"
+        [formGroup]="signInForm"
+        (submit)="signIn()"
+      >
+        <div class="pb-2 pt-4">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            formControlName="email"
+            placeholder="Email"
+            autofocus
+            autocomplete
+            #userEmail
+            required
+            class="mt-2 w-full rounded-sm border p-4 text-lg text-gray-900 focus:border-indigo-500 focus:bg-white focus:outline-none"
+          />
+        </div>
+        <div class="pb-2 pt-4">
+          <input
+            type="password"
+            name="password"
+            id="password"
+            formControlName="password"
+            placeholder="Password"
+            minlength="8"
+            #userPassword
+            required
+            class="mt-2 w-full rounded-sm border p-4 text-lg text-gray-900 focus:border-indigo-500 focus:bg-white focus:outline-none"
+          />
+        </div>
+        <div class="text-right text-gray-400 hover:text-indigo-500 hover:underline">
+          <a href="#">Forgot your password?</a>
+        </div>
+        <div class="pb-2 pt-4">
+          <button
+            class="w-full bg-blue-500 p-4 text-lg uppercase text-white hover:bg-[#2C387E] focus:outline-none"
+            type="submit"
+          >
+            sign in
+          </button>
+        </div>
+
+        <div class="flex justify-center">
+          Don't have an account?
+          <a
+            routerLink="/sign-up"
+            class="active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600"
+          >
+            <p
+              class="cursor-pointer pl-2 text-right text-gray-400 hover:text-indigo-500 hover:underline"
+            >
+              Sign Up
+            </p>
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

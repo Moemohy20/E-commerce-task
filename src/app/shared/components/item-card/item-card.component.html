@@ -1,0 +1,14 @@
+<div class="rounded p-3 shadow-xl transition-transform hover:scale-105" (click)="onItemClick()">
+  <div>
+    <img [src]="item.image" alt="item photo" class="h-52 w-full object-scale-down object-center" />
+  </div>
+  <div class="item-body">
+    <h5 class="item-title truncate text-xl">{{ item.title }}</h5>
+    <p class="item-text">{{ item.price | currency }}</p>
+    <div class="add-to-cart flex justify-end">
+      <button class="rounded bg-blue-500 px-4 py-2 text-white" (click)="addToCard($event)">
+        Add to cart
+      </button>
+    </div>
+  </div>
+</div>

@@ -11,3 +11,41 @@ body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
+
+/* private snackbarColors: { [key in AlertType]: string } = {
+  [AlertType.LOADING]: '#f9f9f9', // Adjust as needed for loading color
+  [AlertType.ERROR]: '#f44336',
+  [AlertType.WARN]: '#ff9800',
+  [AlertType.SUCCESS]: '#4caf50',
+  [AlertType.INFO]: '#00bcd4',
+}; */
+
+::ng-deep snack-bar-container.custom-class {
+  background: yellow;
+}
+
+::ng-deep .custom-class .mat-simple-snackbar {
+  color: green;
+}
+
+.snackbar-loading {
+  background-color: #f9f9f9; /* Adjust as needed */
+  color: #333; /* Adjust as needed */
+}
+
+.snackbar-error {
+  background-color: #f44336; /* Adjust as needed */
+  color: #333; /* Adjust as needed */
+}
+.snackbar-warn {
+  background-color: #ff9800; /* Adjust as needed */
+  color: #333; /* Adjust as needed */
+}
+.snackbar-success {
+  background-color: #4caf50; /* Adjust as needed */
+  color: #333; /* Adjust as needed */
+}
+.snackbar-info {
+  background-color: #00bcd4; /* Adjust as needed */
+  color: #333; /* Adjust as needed */
+}

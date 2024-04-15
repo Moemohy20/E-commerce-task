@@ -1,0 +1,74 @@
+<div class="p-5">
+  <header class="text-left">
+    <h1 class="text-xl font-bold capitalize text-gray-900 sm:text-3xl">shopping carts</h1>
+  </header>
+
+  <div class="flex gap-3">
+    <div class="w-8/12">
+      <ul class="flex h-full flex-col gap-3">
+        @for (item of cartItems.value; track item.id) {
+          <li class="flex items-start gap-4 p-2 shadow-lg">
+            <img [src]="item.image" alt="item photo" class="size-52 rounded object-cover" />
+
+            <div class="flex h-full flex-col justify-between">
+              <div class="flex p-3">
+                <div>
+                  <h3 class="text-sm text-gray-900">Basic Tee 6-Pack</h3>
+                  <p>{{ item.description }}</p>
+                </div>
+
+                <div>
+                  <p class="text-lg font-medium text-gray-900">{{ item.price | currency }}</p>
+                </div>
+              </div>
+
+              <div class="mb-2 flex items-center justify-end gap-4">
+                <!-- <select name="choice" class="rounded border-gray-300 text-gray-700 sm:text-sm">
+                  @for (option of cartQuantity; track option) {
+                    <option [value]="cartQuantity" [selected]="option === 1">
+                      {{ option }}
+                    </option>
+                  }
+                </select> -->
+
+                <button
+                  class="text-gray-600 transition hover:text-red-600"
+                  type="button"
+                  (click)="removeFromCart(item)"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="h-4 w-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </li>
+        }
+      </ul>
+    </div>
+
+    <div class="summary">
+      <div>
+        <h3>order summary</h3>
+        <ul>
+          <li>subtotal</li>
+          <li>shipping</li>
+          <li>subtotal</li>
+          <li>subtotal</li>
+        </ul>
+        <button>checkout</button>
+      </div>
+    </div>
+  </div>
+</div>
